@@ -1,0 +1,43 @@
+<div style="display: flex; flex-direction: column">
+  <span>{{ count() }}</span>
+  <span>{{ count1() }}</span>
+  <button (click)="setCount()">set1</button>
+  <button (click)="setCount1()">set2</button>
+
+  <div class="container">
+    @for (block of blocks; track block) {
+      <div class="block"></div>
+    }
+  </div>
+
+  @defer (on viewport) {
+    <app-load text="loaded viewport"></app-load>
+  } @placeholder {
+    <span>placeholder...</span>
+  }
+
+  @defer (on idle) {
+    <app-load text="loaded idle"></app-load>
+  } @placeholder {
+    <span>placeholder...</span>
+  }
+
+  @defer (on timer(3000)) {
+    <app-load text="loaded timer"></app-load>
+  } @placeholder {
+    <span>placeholder...</span>
+  }
+
+  @defer (on interaction) {
+    <app-load text="loaded interaction"></app-load>
+  } @placeholder {
+    <span>placeholder...</span>
+  }
+
+  @defer (on hover) {
+    <app-load text="loaded hover 1"></app-load>
+  } @placeholder {
+    <span>placeholder...</span>
+  }
+
+</div>
